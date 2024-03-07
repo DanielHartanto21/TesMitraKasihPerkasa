@@ -64,4 +64,4 @@ sampel user yang bisa diakses:
    - api ini memerlukan token
    - api ini memerlukan product id dan jumlah stock yang akan terganti
    - api ini tidak mengembalikan apapun
-## sampel input api Postman_TesMKP.postman_collection.json (untuk insert produk bisa menggunakan nama lain karena dibuat unique
+## sampel input api Postman_TesMKP.postman_collection.json (untuk insert produk dibuat unique)
