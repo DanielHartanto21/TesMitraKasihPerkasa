@@ -29,6 +29,7 @@
 
 
 <img src="cara_kerja_api.jpg" alt="database-design" >
+
 ## API yang tersedia berjalan di localhost:3000
 1. POST("/api/login")
    - Api ini digunakan untuk login 
