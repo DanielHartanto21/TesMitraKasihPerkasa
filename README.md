@@ -28,11 +28,24 @@
    - terdiri dari id user foreign key table user, id customer foreign key table customer,id produk foreign key table produk, waktu penjualan, jumlah penjualan
 
 
-
-6. **Relationships**:
-   - The 'user_id' field in the 'sale' table references the 'id' field in the 'user' table, linking each sale to a specific user or cashier.
-   - The 'customer_id' field in the 'sale' table references the 'id' field in the 'customer' table, connecting each sale to a specific customer.
-   - The 'sale_id' field in the 'sale_item' table references the 'id' field in the 'sale' table, associating each sale item with a specific sale.
-   - The 'product_id' field in the 'sale_item' table references the 'id' field in the 'product' table, indicating which product is being sold.
-
-The design ensures that information about users, customers, products, and sales is structured logically and can be efficiently retrieved and managed. The system allows for tracking sales, managing stock, and providing insights into sales and customer data.
+## API yang tersedia berjalan di localhost:3000
+1. POST("/api/login")
+   - Api ini digunakan untuk login 
+   - memerlukan nama user dan password
+   - mengembalikan header dan body UUID yang digunakan untuk token 
+2. POST("/insert_product")
+   - api ini digunakan untuk memasukan produk baru
+   - api ini memerlukan token 
+   - produk baru tidak boleh memiliki produk yang sama dengan yang lama
+   - memerlukan nama produk,jenis produk, harga produk, updated by stock
+   - api ini tidak mengembalikan apapun
+3. GET("/list_product")
+   - api ini digunakan untuk memlist produk yang tersedia
+   - api ini memerlukan token
+   - api ini tidak memerlukan apapun
+   - mengembalikan list produk
+5. PATCH("/update_stock")
+   - api ini digunakan hanya untuk mengubah stock yang ada
+   - api ini memerlukan token
+   - api ini memerlukan product id dan jumlah stock yang akan terganti
+   - api ini tidak mengembalikan apapun
