@@ -29,15 +29,16 @@
 
 ## Script query SQL berada di folder script_create_database
 isi script query sql :
-- drop table jika ada dan membuat table user,product,customer,sold product
-- membuat trigger untuk auto mengurangi stock setiap pembelian produk
-- membuat sampel data
-- query select untuk menampilkan sisa stock
-- query select untuk mencek penjualan berdasarkan hari
+   - drop table jika ada dan membuat table user,product,customer,sold product
+   - membuat trigger untuk auto mengurangi stock setiap pembelian produk
+   - membuat sampel data
+   - query select untuk menampilkan sisa stock
+   - query select untuk mencek penjualan berdasarkan hari
 ## bentuk cara kerja api
 <img src="cara_kerja_api.jpg" alt="database-design" >
-- pertama tama menggunakan api login untuk mendapatkan token
-- akses api yang lain menggunakan token yang diberikan
+   
+   - pertama tama menggunakan api login untuk mendapatkan token
+   - akses api yang lain menggunakan token yang diberikan
 
 ## API yang tersedia berjalan di localhost:3000
 1. POST("/api/login")
