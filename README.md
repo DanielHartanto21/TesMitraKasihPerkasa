@@ -34,6 +34,9 @@ isi script query sql :
    - membuat sampel data
    - query select untuk menampilkan sisa stock
    - query select untuk mencek penjualan berdasarkan hari
+sampel user yang bisa diakses:
+-nama: Daniel password: 123
+-nama: Daniel Hartanto  password:123
 ## bentuk cara kerja api
 <img src="cara_kerja_api.jpg" alt="database-design" >
    
