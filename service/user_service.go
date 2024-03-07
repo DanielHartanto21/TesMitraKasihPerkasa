@@ -6,5 +6,6 @@ import (
 )
 
 type UserService interface {
-	Login(ctx context.Context, request web.UserLoginRequest) string
+	Logins(ctx context.Context, request web.UserLoginRequest) web.LoginResponse
+	Check(uuid string) bool
 }

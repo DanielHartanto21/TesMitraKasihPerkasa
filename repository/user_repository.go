@@ -3,8 +3,10 @@ package repository
 import (
 	"context"
 	"database/sql"
+	"tesMitraKasihPerkasa/model/domain"
 )
 
 type UserRepository interface {
-	Login(ctx context.Context, tx *sql.Tx, name string, password string) (string, error)
+	Logins(ctx context.Context, tx *sql.Tx, user domain.Users) (domain.Users, error)
+	Check(tx *sql.Tx, uuid string) bool
 }

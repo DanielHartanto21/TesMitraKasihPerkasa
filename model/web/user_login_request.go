@@ -1,6 +1,6 @@
 package web
 
 type UserLoginRequest struct {
-	name     string
-	password string
+	Name     string `validate:"required"  json:"name"`
+	Password string `validate:"required"  json:"password"`
 }

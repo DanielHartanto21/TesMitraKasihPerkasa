@@ -4,22 +4,40 @@ import (
 	"context"
 	"database/sql"
 	"errors"
+	"tesMitraKasihPerkasa/helper"
+	"tesMitraKasihPerkasa/model/domain"
 )
 
 type UserRepositoryImplementation struct {
 }
 
-func (users *UserRepositoryImplementation) Login(ctx context.Context, tx *sql.Tx, name string, password string) (string, error) {
-	//TODO implement me
-	panic("implement me")
-	SQL := "select Uuid from Users where NamaUser=?,Password=?"
-	rows, err := tx.ExecContext(ctx, SQL, name, password)
-	if err != nil {
-		return "", err
-	}
+func NewUserRepository() UserRepository {
+	return &UserRepositoryImplementation{}
+}
+func (users *UserRepositoryImplementation) Logins(ctx context.Context, tx *sql.Tx, user domain.Users) (domain.Users, error) {
+
+	SQL := "select Uuid from Users where NamaUser=$1 and Password=$2"
+	rows, err := tx.QueryContext(ctx, SQL, user.NamaUser, user.Password)
+	helper.PanicIfError(err)
+	defer rows.Close()
+	data := domain.Users{NamaUser: user.NamaUser}
 	if rows.Next() {
-		rows.Scan(Uuid)
+		err := rows.Scan(&data.Uuid)
+		helper.PanicIfError(err)
+		return data, nil
 	} else {
-		return "", errors.New("not found")
+		return data, errors.New("not found")
+	}
+}
+func (users *UserRepositoryImplementation) Check(tx *sql.Tx, uuid string) bool {
+
+	SQL := "select * from Users where Uuid=$1"
+	rows, err := tx.Query(SQL, uuid)
+	helper.PanicIfError(err)
+	defer rows.Close()
+	if rows.Next() {
+		return true
+	} else {
+		return false
 	}
 }
