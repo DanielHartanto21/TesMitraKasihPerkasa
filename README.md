@@ -52,15 +52,16 @@ sampel user yang bisa diakses:
    - api ini digunakan untuk memasukan produk baru
    - api ini memerlukan token 
    - produk baru tidak boleh memiliki produk yang sama dengan yang lama
-   - memerlukan nama produk,jenis produk, harga produk, updated by stock
+   - memerlukan nama produk,jenis produk, harga produk, updated by stock 
    - api ini tidak mengembalikan apapun
 3. GET("/list_product")
    - api ini digunakan untuk memlist produk yang tersedia
    - api ini memerlukan token
    - api ini tidak memerlukan apapun
    - mengembalikan list produk
-5. PATCH("/update_stock")
+4. PATCH("/update_stock")
    - api ini digunakan hanya untuk mengubah stock yang ada
    - api ini memerlukan token
    - api ini memerlukan product id dan jumlah stock yang akan terganti
    - api ini tidak mengembalikan apapun
+## sampel input api Postman_TesMKP.postman_collection.json (untuk insert produk bisa menggunakan nama lain karena dibuat unique
