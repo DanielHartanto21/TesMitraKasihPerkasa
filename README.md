@@ -27,7 +27,7 @@
    - table ini berguna untuk melihat penjualan harian maupun penjualan per user maupun penjualan per produk 
    - terdiri dari id user foreign key table user, id customer foreign key table customer,id produk foreign key table produk, waktu penjualan, jumlah penjualan
 
-
+## Script quer SQL berada di folder script_create_database
 <img src="cara_kerja_api.jpg" alt="database-design" >
 
 ## API yang tersedia berjalan di localhost:3000
