@@ -28,6 +28,7 @@
    - terdiri dari id user foreign key table user, id customer foreign key table customer,id produk foreign key table produk, waktu penjualan, jumlah penjualan
 
 
+<img src="cara_kerja_api.jpeg" alt="database-design" >
 ## API yang tersedia berjalan di localhost:3000
 1. POST("/api/login")
    - Api ini digunakan untuk login 
